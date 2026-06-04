@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:3000/api';
+const API_BASE_URL = 
+  process.env.NODE_ENV === 'production'
+    ? 'https://abk-kandadji-api.onrender.com'
+    : 'http://localhost:3000';
 
 // Créer l'instance axios
 const client = axios.create({
